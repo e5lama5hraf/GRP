@@ -34,7 +34,7 @@ export async function checkAuth(requireAuth = true) {
         if (error) throw error;
         
         const authPages = ['index.html'];
-        const protectedPages = ['dashboard.html', 'settings.html', 'files.html'];
+        const protectedPages = ['Home.html', 'settings.html', 'files.html'];
         
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         
@@ -46,7 +46,7 @@ export async function checkAuth(requireAuth = true) {
             }
         } else if (session && authPages.includes(currentPage)) {
             // Already authenticated but trying to access auth page
-            window.location.href = 'dashboard.html';
+            window.location.href = 'Home.html';
             return false;
         }
         
@@ -184,3 +184,16 @@ export function hideModal(modalId) {
         modal.style.display = 'none';
     }
 } 
+
+async function initializeDatabase() {
+    try {
+        const { error: archiveError } = await supabase.rpc('create_archive_table_if_not_exists');
+        if (archiveError) throw archiveError;
+        
+        console.log('Database initialized successfully');
+    } catch (error) {
+        console.error('Database initialization error:', error);
+    }
+}
+
+initializeDatabase();

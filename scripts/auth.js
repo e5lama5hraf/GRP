@@ -41,6 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (registerForm) {
         registerForm.addEventListener('submit', handleRegister);
     }
+
+    // Initialize logout button
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            logout();
+        });
+    }
 });
 
 /**
@@ -69,8 +78,8 @@ async function handleLogin(e) {
         
         if (error) throw error;
         
-        // Redirect to dashboard on successful login
-        window.location.href = 'dashboard.html';
+        // Redirect to Home on successful login
+        window.location.href = 'Home.html';
     } catch (error) {
         console.error('Login error:', error);
         showError('login-error', `Login failed: ${error.message}`);
@@ -134,7 +143,7 @@ export async function logout() {
     try {
         const { error } = await supabase.auth.signOut();
         if (error) throw error;
-        
+
         // Redirect to login page
         window.location.href = 'index.html';
     } catch (error) {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Colloge</title>
+    <title>Home - ClassMate</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
 </head>
@@ -12,26 +12,27 @@
         <!-- Sidebar Navigation -->
         <nav class="sidebar">
             <div class="logo">
-                <h2>Colloge</h2>
+                <h2>ClassMate</h2>
             </div>
             <ul class="nav-links">
-                <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                <li class="active"><a href="Home.html">Home</a></li>
                 <li><a href="files.html">Files</a></li>
+                <li><a href="archive.html">Archive</a></li>
                 <li><a href="settings.html">Settings</a></li>
-                <li><a href="#" id="logout-btn">Logout</a></li>
+                <li><a onclick="logout()" id="logout-btn">Logout</a></li>
             </ul>
         </nav>
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <header class="dashboard-header">
-                <h1>Dashboard</h1>
+            <header class="Home-header">
+                <h1>Home</h1>
                 <div class="user-info">
                     <span id="user-name">Loading...</span>
                 </div>
             </header>
 
-            <div class="dashboard-grid">
+            <div class="Home-grid">
                 <!-- Weekly Schedule Section -->
                 <section class="card schedule-card">
                     <div class="card-header">

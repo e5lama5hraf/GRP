@@ -3,7 +3,7 @@
  * Handles file upload, download, and management with Supabase Storage
  */
 
-import { supabase, checkAuth, showError, showSuccess, hideModal} from './supabase.js';
+import { supabase, checkAuth, showError, showSuccess , hideModal} from './supabase.js';
 
 let currentFileId = null;
 let currentFilePath = null;

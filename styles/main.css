@@ -109,6 +109,10 @@ input, select, textarea {
     color: var(--gray-600);
 }
 
+#logout-btn {
+    cursor: pointer;
+}
+
 .tabs {
     display: flex;
     margin-bottom: 1.5rem;
@@ -289,8 +293,8 @@ input, select, textarea {
     color: var(--white);
 }
 
-/* Dashboard */
-.dashboard-header {
+/* Home */
+.Home-header {
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -301,14 +305,14 @@ input, select, textarea {
     font-weight: 500;
 }
 
-.dashboard-grid {
+.Home-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
 @media (min-width: 992px) {
-    .dashboard-grid {
+    .Home-grid {
         grid-template-columns: 2fr 1fr;
     }
 }
@@ -601,3 +605,72 @@ input, select, textarea {
     text-align: center;
     color: var(--gray-600);
 } 
+
+/* Archive Page Styles */
+.archive-card {
+    margin-top: 1.5rem;
+}
+
+.filter-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: end;
+}
+
+.filter-controls .form-group {
+    margin-bottom: 0;
+}
+
+.file-owner {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+@media (max-width: 768px) {
+    .filter-controls {
+        grid-template-columns: 1fr;
+    }
+}
+
+.files-list-header {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr 2fr 1fr;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    background-color: var(--gray-100);
+    border-radius: var(--border-radius);
+    margin-bottom: 0.5rem;
+}
+
+.file-item {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr 1fr 2fr 1fr;
+    padding: 0.75rem 1rem;
+    align-items: center;
+    border-bottom: 1px solid var(--gray-200);
+    transition: var(--transition);
+}
+
+@media (max-width: 992px) {
+    .files-list-header,
+    .file-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .files-list-header > div,
+    .file-item > div {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .files-list-header > div::before,
+    .file-item > div::before {
+        content: attr(class);
+        font-weight: 500;
+        margin-right: 1rem;
+        color: var(--gray-600);
+    }
+}

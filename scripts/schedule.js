@@ -3,7 +3,7 @@
  * Manages weekly class schedule using FullCalendar library
  */
 
-import { supabase, checkAuth, showError, showSuccess, showModal, hideModal} from './supabase.js';
+import { supabase, checkAuth, showError, showSuccess, showModal, hideModal } from './supabase.js';
 
 let calendar;
 let currentScheduleId = null;
